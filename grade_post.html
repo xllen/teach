@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>教学系统管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-maizi.css"/>
+</head>
+<body>
+<!--导航-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">教学管理系统</a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;管理首页</a></li>
+                <li><a href="student_list.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;学籍管理</a></li>
+                <li><a href="test.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;考试管理</a></li>
+                <li class="active"><a href="grade.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;成绩管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                    </ul>
+                </li>
+                <li><a href="#bbs"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+
+    </div>
+</nav>
+<!--导航-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="list-group">
+                <a href="grade.html" class="list-group-item">成绩管理</a>
+                <a href="grade_post.html" class="list-group-item active">成绩查询</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="page-header">
+                <h1>成绩管理</h1>
+            </div>
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href="grade.html">成绩列表</a>
+                </li>
+                <li class="active">
+                    <a href="grade_post.html">成绩查询</a>
+                </li>
+            </ul>
+            <form action="#" class="mar_t15">
+                <div class="alert alert-info" role="alert">
+                    <strong>查询提示：</strong>
+                    支持模糊搜索和匹配搜索，可仅填一项进行查询！
+                </div>
+                <div class="form-group">
+                    <label for="student-name">考生姓名</label>
+                    <input type="text" id="student-name" class="form-control" placeholder="请输入考生姓名">
+                </div>
+                <div class="form-group">
+                    <label for="student-num">考生学号</label>
+                    <input id="student-num" class="form-control" placeholder="请输入考生学号"></textarea>
+                </div>
+                <div class="checkbox">
+                    <button type="submit" class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal1">提交</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">查询结果</h4>
+            </div>
+            <div class="modal-body" id="search-body">
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>学号</th>
+                        <th>英语</th>
+                        <th>数学</th>
+                        <th>软件</th>
+                    </tr>
+                </thead>
+                <tbody id="student-grade">
+                    
+                </tbody>
+            </table>
+            </div>  
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<footer style="margin-top:100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Copyright&nbsp;©&nbsp;2016-2017&nbsp;&nbsp;www.cjdx.com&nbsp;&nbsp;鄂D ICP备13014270号-4
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+
+
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/grade-post.js"></script>
+</body>
+</html>
